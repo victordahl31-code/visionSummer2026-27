@@ -6,6 +6,8 @@ import com.qualcomm.robotcore.util.Range;
 
 public class Hardware {
 
+    // naming the DcMotors
+
     public DcMotor rf;
 
     public DcMotor lf;
@@ -35,28 +37,32 @@ public class Hardware {
         //cs0 = control hub, servo, port 0
         //es5 = expansion hub, servo, port 5
 
-        rf = hwMap.get(DcMotor.class, "cm1");
-        rf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rf.setPower(0);
 
-        lf = hwMap.get(DcMotor.class, "cm2");
-        lf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        lf.setPower(0);
 
-        rb = hwMap.get(DcMotor.class, "cm3");
-        rb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rb.setPower(0);
+        rf = hwMap.get(DcMotor.class, "cm1"); // naming the device
+        rf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // set power behavior to brake
+        rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER); // how to run
+        rf.setPower(0); // setting the power
 
-        lb = hwMap.get(DcMotor.class, "cm0");
-        lb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        lb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        lb.setPower(0);
+        lf = hwMap.get(DcMotor.class, "cm2"); // naming the device
+        lf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // set power behavior to brake
+        lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER); // how to run
+        lf.setPower(0); // setting the power
+
+        rb = hwMap.get(DcMotor.class, "cm3"); // naming the device
+        rb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // set power behavior to brake
+        rb.setMode(DcMotor.RunMode.RUN_USING_ENCODER); // how to run
+        rb.setPower(0); // setting the power
+
+        lb = hwMap.get(DcMotor.class, "cm0"); // naming the device
+        lb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE); // set power behavior to brake
+        lb.setMode(DcMotor.RunMode.RUN_USING_ENCODER); // how to run
+        lb.setPower(0); // setting the power
     }
 
         public void setPower(double fr, double bl, double fl, double br) {
+
+        // setting power to maxSpeed
 
             rf.setPower(Range.clip(fr, -maxSpeed, maxSpeed));
             rb.setPower(Range.clip(br, -maxSpeed, maxSpeed));
